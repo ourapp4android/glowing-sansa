@@ -24,9 +24,10 @@
         </activity>
         <!-- 聊天页 --> 
     	<activity android:name=".FullscreenActivity"
-    	    	 android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-    	    >
-    	    
+    	    	 android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+    	</activity>
+    	<activity android:name=".RegisterActivity"
+    	    	  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">    	    
     	</activity>
     	 <!-- 登录界面 --> 
     	<activity android:name=".LoginActivity"

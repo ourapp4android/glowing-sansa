@@ -30,7 +30,7 @@ public class IndexPageActivity extends Activity {
 		@Override
 		protected void onPostExecute(Long result) {
 			Intent intent = new Intent();
-			intent.setClass(IndexPageActivity.this, LoginActivity.class);
+			intent.setClass(IndexPageActivity.this, RegisterActivity.class);
 			startActivity(intent);
 			super.onPostExecute(result);
 			

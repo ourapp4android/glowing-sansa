@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/NavPage" >
+
+<LinearLayout
+            style="@style/MMBody"
+            android:layout_height="318dp"
+            android:paddingTop="10.0dip" >
+
+            <LinearLayout
+                style="@style/MMBody"
+                android:layout_height="114dp"
+                android:layout_marginTop="10dip"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="0.0dip"
+                android:paddingRight="0.0dip"
+                android:paddingTop="25.0dip" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45.0dip" >
+
+                    <LinearLayout
+                        android:id="@id/country_code_ll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/btn_style_two"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@id/country_code"
+                            style="@style/MMEditText"
+                            android:layout_width="70.0dip"
+                            android:layout_gravity="center"
+                            android:background="@drawable/mm_trans"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:text="@string/country_normal_code"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@id/country_name"
+                            style="@style/MMLineEditText"
+                            android:background="@drawable/mm_trans"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:text="@string/country_normal_name"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                        <ImageView
+                            android:layout_width="1.0dip"
+                            android:layout_height="43.0dip"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="76.0dip"
+                            android:contentDescription="@string/picDesc"
+                            android:background="@color/lightgrey" />
+
+                        <View
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0" />
+
+                        <ImageView
+                            android:layout_width="20.0dip"
+                            android:contentDescription="@string/picDesc"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginRight="5.0dip"
+                            android:background="@drawable/reg_by_mobile" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <View style="@style/MMLabelSplit" />
+
+                <EditText
+                    android:id="@id/regbymobilereg_mobile_et"
+                    style="@style/MMLineEditText"
+                    android:ems="10"
+                    android:hint="@string/regbymoile_reg_addr_hint"
+                    android:inputType="phone" >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+            <View style="@style/MMLabelSplit" />
+
+            <LinearLayout
+                style="@style/MMLine"
+                android:gravity="left"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@id/agree_cb"
+                    style="@style/RegUICheckBox"
+                    android:checked="true"
+                    android:text="@string/license_agree" />
+
+                <Button
+                    android:id="@id/agree_btn"
+                    style="@style/RegUIHyperText"
+                    android:paddingBottom="5.0dip"
+                    android:paddingLeft="0.0dip"
+                    android:paddingRight="0.0dip"
+                    android:text="@string/license_detail" />
+            </LinearLayout>
+
+            <View style="@style/MMLabelSplit" />
+
+            <RelativeLayout
+                style="@style/MMBlock"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@id/login_tip"
+                        style="@style/RegUIHyperText"
+                        android:layout_gravity="bottom|left|center" />
+
+                    <LinearLayout
+                        android:id="@id/fblogin_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom|left|center"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00ffffff"
+                            android:src="@drawable/share_to_facebook_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7.0dip"
+                            android:singleLine="true"
+                            android:text="@string/select_login_by_facebook"
+                            android:textColor="@color/mm_hyper_text"
+                            android:textSize="@dimen/BasicTextSize" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="bottom|right|center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="40.0dip"
+                        android:layout_weight="1.0" />
+
+                    <Button
+                        android:id="@id/login_btn"
+                        style="@style/MMLineActionButton"
+                        android:layout_width="90.0dip"
+                        android:layout_gravity="right"
+                        android:background="@drawable/btn_style_one"
+                        android:gravity="center"
+                        android:text="@string/app_nextstep"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+</LinearLayout>

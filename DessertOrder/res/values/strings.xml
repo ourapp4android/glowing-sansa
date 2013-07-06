@@ -15,4 +15,14 @@
     <string name="opt_silent">静音登录</string>
     <string name="opt_openVibra">开启振动</string>
     <string name="opt_acceptGroupMsg">接收群消息</string>
+    
+    <string name="country_normal_code">+86</string>
+    <string name="country_normal_name">中国</string>
+    <string name="regbymoile_reg_addr_hint">输入电话号码</string>
+    <string name="select_login_by_facebook">Facebook Connect</string>
+    <string name="app_nextstep">Next</string>
+    <string name="license_agree">Read and agreed:</string>
+    <string name="license_detail">Terms and Privacy</string>
+    
+    <string name="picDesc" >图片描述：</string>
 </resources>

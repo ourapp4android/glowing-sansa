@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="country_code_ll">false</item>
+    <item type="id" name="country_code">false</item>
+    <item type="id" name="country_name">false</item>
+    <item type="id" name="regbymobilereg_mobile_et">false</item>
+    <item type="id" name="agree_cb">false</item>
+    <item type="id" name="agree_btn">false</item>
+    <item type="id" name="fblogin_tip">false</item>
+    <item type="id" name="login_btn">false</item>
+    <item type="id" name="login_tip">false</item>
+</resources>
