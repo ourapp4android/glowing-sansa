@@ -87,6 +87,7 @@ public class FullscreenActivity extends Activity {
 		chatAdapter = new ChatAdapter(this, chatList);
 		
 		chatListView.setAdapter(chatAdapter);
+		chatListView.setSelection(chatListView.getBottom());
 		
 		// Set up an instance of SystemUiHider to control the system UI for
 		// this activity.
@@ -114,12 +115,10 @@ public class FullscreenActivity extends Activity {
 						entity.setUserName("me");
 						chatList.add(entity);
 						chatAdapter.notifyDataSetChanged();
-						chatListView.setSelection(chatList.size()-1);
 						//
 						contentEditText.setText("");
 						//
 						netService.sendMessge(msg);
-						
 					}
 				}else{
 					Toast.makeText(FullscreenActivity.this, "发送内容不能为空", Toast.LENGTH_SHORT).show();
