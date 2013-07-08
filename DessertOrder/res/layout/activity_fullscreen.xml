@@ -1,72 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>  
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#a0ffffff"
+    android:orientation="vertical"
     tools:context=".FullscreenActivity" >
+	
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="0px"
+        android:divider="@color/transparent"
+        android:layout_marginBottom="2dp" >
+    </ListView>
 
-    <!--
-         The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc.
-    -->
-
-    <TextView
-        android:id="@+id/fullscreen_content"
+    <LinearLayout
+        android:id="@+id/fullscreen_content_controls"
+        style="?buttonBarStyle"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/black_overlay"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent" >
 
-    <!--
-         This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows.
-    -->
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true" >
-
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="?buttonBarStyle"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent" >
+            android:layout_weight="0.90"
+            android:ems="10"
+            android:hint="@string/dummy_content" >
+        </EditText>
 
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="198dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.90"
-                android:ems="10" >
-            </EditText>
+        <Button
+            android:id="@+id/dummy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send" >
+        </Button>
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/dummy_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/send">
-                 <requestFocus />
-               </Button> 
-            
-        </LinearLayout>
-
-        <ListView
-            android:id="@+id/listView1"
-            android:layout_width="fill_parent"
-            android:layout_height="392dp" >
-        </ListView>
-
-    </FrameLayout>
-
-</FrameLayout>
+</LinearLayout>

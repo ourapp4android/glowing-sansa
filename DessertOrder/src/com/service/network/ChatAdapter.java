@@ -59,21 +59,30 @@ public class ChatAdapter extends BaseAdapter {
 	}
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		if(convertView ==null){
-			chatHolder = new ChatHolder();
-			if(chatList.get(position).isComeMsg()){
-				convertView = inflater.inflate(R.layout.recevie_msg_item, null);
-			}else{
-				convertView = inflater.inflate(R.layout.send_msg_item, null);
-			}
-			chatHolder.timeView = (TextView)convertView.findViewById(R.id.tv_time);
-			chatHolder.contentView = (TextView)convertView.findViewById(R.id.tv_content);
-			chatHolder.imageView = (ImageView)convertView.findViewById(R.id.iv_user_image);
+		
+		/*if(convertView ==null){
+			
+		}*/
+		
+		chatHolder = new ChatHolder();
+		if(chatList.get(position).isComeMsg()){
+			convertView = inflater.inflate(R.layout.recevie_msg_item, null);
+		}else{
+			convertView = inflater.inflate(R.layout.send_msg_item, null);
 		}
+		chatHolder.timeView = (TextView)convertView.findViewById(R.id.tv_time);
+		chatHolder.contentView = (TextView)convertView.findViewById(R.id.tv_content);
+		chatHolder.imageView = (ImageView)convertView.findViewById(R.id.iv_user_image);
+		
 		MsgEntity entity = chatList.get(position);
 		chatHolder.timeView.setText(entity.getUserName());
 		chatHolder.contentView.setText(entity.getContent());
-		chatHolder.imageView.setImageResource(R.drawable.comment);
+		if(entity.isComeMsg()){
+			chatHolder.imageView.setImageResource(R.drawable.chatfrom_bg_focused);
+		}else{
+			chatHolder.imageView.setImageResource(R.drawable.mini_avatar_shadow);
+		}
+		
 		return convertView;
 		
 	}

@@ -3,7 +3,7 @@
 
     <string name="app_name">make possible</string>
     <string name="dummy_button">send Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content">输入内容,点击发送</string>
 	
     <string name="send">发送</string>
     <string name="strInputAccHint">输入帐号</string>
