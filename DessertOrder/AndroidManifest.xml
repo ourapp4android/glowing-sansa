@@ -7,38 +7,49 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-   
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" >
     </uses-permission>
-	<application android:allowBackup="false" 
-	    		 android:icon="@drawable/launcher" 
-	    		 android:label="@string/app_name">
-    	<!-- 开始页 -->
-    	<activity android:name="com.example.dessertorder.IndexPageActivity"
-    	    	android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/launcher"
+        android:label="@string/app_name" >
+
+        <!-- 开始页 -->
+        <activity
+            android:name="com.example.dessertorder.IndexPageActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <!-- 聊天页 -->
+        <activity
+            android:name=".FullscreenActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 聊天页 --> 
-    	<activity android:name=".FullscreenActivity"
-    	    	 android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-    	</activity>
-    	<activity android:name=".RegisterActivity"
-    	    	  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">    	    
-    	</activity>
-    	 <!-- 登录界面 --> 
-    	<activity android:name=".LoginActivity"
-    	    	  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"	
-                  android:label="@string/app_name">
-        </activity> 
-        <service android:name="com.service.network.NetService" android:enabled="true">
-    		<intent-filter >
-    		    <action android:name="com.service.network.NetService"/>
-    		</intent-filter>    
-    	</service>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <!-- 登录界面 -->
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+
+        <service
+            android:name="com.service.network.NetService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.service.network.NetService" />
+            </intent-filter>
+        </service>
     </application>
-    
+
 </manifest>

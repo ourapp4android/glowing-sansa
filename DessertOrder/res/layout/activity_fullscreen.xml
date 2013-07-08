@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -55,18 +55,19 @@
                 android:id="@+id/dummy_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/send">
-                 <requestFocus />
-               </Button> 
-            
+                android:text="@string/send" >
+
+                <requestFocus />
+            </Button>
         </LinearLayout>
 
         <ListView
             android:id="@+id/listView1"
             android:layout_width="fill_parent"
-            android:layout_height="392dp" >
+            android:layout_height="450dp" 
+            android:transcriptMode="alwaysScroll"
+            android:stackFromBottom="true">
         </ListView>
-
     </FrameLayout>
 
 </FrameLayout>

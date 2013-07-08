@@ -27,6 +27,8 @@ public class ChatAdapter extends BaseAdapter {
    	 inflater = LayoutInflater.from(this.context);
     }
     
+    
+    
 	@Override
 	public int getCount() {
 		return chatList.size();
@@ -69,6 +71,9 @@ public class ChatAdapter extends BaseAdapter {
 			chatHolder.timeView = (TextView)convertView.findViewById(R.id.tv_time);
 			chatHolder.contentView = (TextView)convertView.findViewById(R.id.tv_content);
 			chatHolder.imageView = (ImageView)convertView.findViewById(R.id.iv_user_image);
+			convertView.setTag(chatHolder);
+		}else{
+			chatHolder = (ChatHolder) convertView.getTag();
 		}
 		MsgEntity entity = chatList.get(position);
 		chatHolder.timeView.setText(entity.getUserName());
