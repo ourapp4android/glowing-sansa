@@ -25,4 +25,10 @@
     <string name="license_detail">Terms and Privacy</string>
     
     <string name="picDesc" >图片描述：</string>
+    
+    <string name="netstate" >网络状态</string>
+    <string name="setnetwork" >当前网络不可用，请设置网络!</string>
+    <string name="setup" >设置</string>
+    <string name="cancel" >取消</string>
+    
 </resources>
