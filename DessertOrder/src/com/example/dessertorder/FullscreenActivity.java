@@ -60,6 +60,7 @@ public class FullscreenActivity extends Activity {
 		chatAdapter = new ChatAdapter(this, chatList);
 		
 		chatListView.setAdapter(chatAdapter);
+		chatListView.setSelection(chatListView.getBottom());
 		contentEditText.clearFocus();
 		
 		//
@@ -83,7 +84,7 @@ public class FullscreenActivity extends Activity {
 						entity.setUserName("me");
 						chatList.add(entity);
 						chatAdapter.notifyDataSetChanged();
-						chatListView.setSelection(chatList.size()-1);
+						
 						//
 						contentEditText.setText("");
 						//

@@ -1,6 +1,7 @@
 package com.service.network;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
@@ -95,7 +96,14 @@ public class NetService extends Service {
 
 			Log.d("Send Thread",">>>start send msg");
 			String data = (String)sendMsg.obj;
-			DatagramPacket packet=new DatagramPacket(data.getBytes(), data.length(),group,MULTICAST_PORT);
+			byte[] dataByte = null;
+			try {
+				dataByte = data.getBytes("utf-8");
+			} catch (UnsupportedEncodingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			DatagramPacket packet=new DatagramPacket(dataByte, dataByte.length,group,MULTICAST_PORT);
 	    	try {
 				multicastSocket.send(packet);
 			} catch (IOException e) {
@@ -120,7 +128,7 @@ public class NetService extends Service {
 			}
 
 			while(true){
-		     	byte[] receiveData=new byte[100]; 
+		     	byte[] receiveData=new byte[30 * 1024]; 
 		    	DatagramPacket packet=new DatagramPacket(receiveData, receiveData.length); 
 		        try {
 		        	//
@@ -131,14 +139,10 @@ public class NetService extends Service {
 		            Log.d(TAG,">>>packet ip address: "+packetIpAddress);
 		            clientList.add(packetIpAddress);
 		            //
-		            
-		            StringBuilder packetContent=new StringBuilder();
-		            for(int i=0;i<receiveData.length;i++){
-		            	packetContent.append((char)receiveData[i]);
-		            }
+		            String packetContent = new String(receiveData, 0, packet.getLength(),"utf-8"); 
 		            MsgEntity entity = new MsgEntity();
 		            entity.setComeMsg(true);
-		            entity.setContent(packetContent.toString());
+		            entity.setContent(packetContent);
 		            entity.setUserName(packetIpAddress);
 		            Message msg = new Message();
 		            msg.what=2;
